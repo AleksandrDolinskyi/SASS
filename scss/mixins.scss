@@ -1,0 +1,18 @@
+@mixin link {
+  font-size: 1.1em;
+  font-weight: bold;
+  font-famile: Arial, sans-serif;
+  text-decoration: none;
+  color: $href;
+}
+@mixin padd ($padd) {
+  padding:$padd;
+}
+@mixin grid {
+  float: left;;
+  background: #ce3d3d;
+  height:150px;
+  &:nth-child(#{$cols}n) {
+    margin-right:0;
+  }
+}

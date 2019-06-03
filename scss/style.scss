@@ -1,0 +1,52 @@
+@import "variables";
+@import "mixins";
+* {
+  padding: 10px;
+  margin: 0;
+}
+#grid {
+  float: left;
+  margin:0;
+  > div {
+    @include grid(1, 100%);
+  }
+}
+/* Обратиться к всем классам у которого нет этого класса */
+.block:not(.first) {
+  @include padd(20px 40px 30px 50px);
+  background: $bgColor;
+  height: $blockHeight;
+  width: $blockWidht;
+  margin-bottom:$blockBottom;
+}
+
+/*  Вложенные стили 
+**  #central_block > ul {
+**   list-style: none;
+**  }
+*/
+
+#central_block {
+  padding:30px;
+  ul {
+    list-style: none;
+    display: inline-block;
+  }
+  li {
+    float:left;
+    margin-right: 10px;
+    color:#fff;
+    width:(100% / 5);
+  }
+  a {
+    @include link;
+  }
+
+}
+.first {
+  background: $bgColor;
+  margin-bottom:$blockBottom;
+  height: $blockHeight;
+  width: $blockWidht;
+  border: $border;
+}
